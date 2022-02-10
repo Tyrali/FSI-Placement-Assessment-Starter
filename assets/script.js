@@ -13,13 +13,14 @@ function updateQuantity(displayQuantity) {
     quantity.textContent = displayQuantity;
     }
 
-// selecting the element with an id of credit
+
 const credit = document.querySelector('#credit')
 
 let gbPlusBtn = document.querySelector("#add-gb");
     gbPlusBtn.addEventListener('click', function() {
     gb++; 
     updateQuantity(`${gb}`);
+    totalQuantity(`${gb+cc+sugar}`);
 });
 
 
@@ -28,6 +29,7 @@ let gbMinusBtn = document.querySelector("#minus-gb");
     if(gb>0){
     gb--; }
     updateQuantity(`${gb}`);
+    totalQuantity(`${gb+cc+sugar}`);
 });
 
 //---------------------------------------
@@ -43,6 +45,7 @@ let ccPlusBtn = document.querySelector("#add-cc");
     ccPlusBtn.addEventListener('click', function() {
     cc++; 
     updateCcQuantity(`${cc}`);
+    totalQuantity(`${gb+cc+sugar}`);
 });
 
 
@@ -51,6 +54,7 @@ let ccMinusBtn = document.querySelector("#minus-cc");
     if(cc>0){
     cc--; }
     updateCcQuantity(`${cc}`);
+    totalQuantity(`${gb+cc+sugar}`);
 });
 
 
@@ -66,6 +70,7 @@ let sugarPlusBtn = document.querySelector("#add-sugar");
     sugarPlusBtn.addEventListener('click', function() {
     sugar++; 
     updateSugarQuantity(`${sugar}`);
+    totalQuantity(`${gb+cc+sugar}`);
 });
 
 
@@ -74,6 +79,7 @@ let sugarMinusBtn = document.querySelector("#minus-sugar");
     if(sugar>0){
     sugar--; }
     updateSugarQuantity(`${sugar}`);
+    totalQuantity(`${gb+cc+sugar}`);
 });
 
 
@@ -83,18 +89,9 @@ let sugarMinusBtn = document.querySelector("#minus-sugar");
 function totalQuantity(displayTotalQuantity) {
     let totalQuantity = document.querySelector("#qty-total");
     totalQuantity.textContent = displayTotalQuantity;
-    }
-    if(gb>0 && cc>0 && sugar>0){
-    totalQuantity(`${gb+cc+sugar}`);
     };
     
-
-
+    
 // Code to update name display
 credit.textContent = `Created by ${yourName}`;
     
-
-// TODO: Write the code to be run when the "+" button for "Gingerbread" is clicked
-
-
-// TODO: Hook up event listeners for the rest of the buttons
